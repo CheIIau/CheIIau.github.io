@@ -1,0 +1,100 @@
+.btn-primary {
+  color: #fff;
+  background-color: $color-blue;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 20px 39px;
+  border-radius: 30px;
+  border: 1px solid $color-blue;
+  letter-spacing: 2.5px;
+  transition: 0.3s;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: $color-blue;
+    background-color: #fff;
+  }
+}
+
+.btn-secondary {
+  color: $color-sky-blue;
+  background-color: $color-greyblue;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 20px 39px;
+  border-radius: 30px;
+  border: 1px solid $color-greyblue;
+  letter-spacing: 2.5px;
+  transition: 0.3s;
+
+  &:hover {
+    color: $color-sky-blue;
+    background-color: #fff;
+    border: 1px solid darkgrey;
+  }
+}
+
+.btn-free {
+  padding: 21px 56px;
+  margin-right: 0px;
+  letter-spacing: 1.4px;
+  box-sizing: border-box;
+}
+
+.btn-group a + a {
+  margin-left: 15px;
+}
+
+.btn-group .btn-secondary {
+  &:hover {
+    background-color: $color-whiteblue;
+  }
+}
+
+.btn-info {
+  color: $color-sky-blue;
+  background-color: transparent;
+  border: 1px solid darkgrey;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 20px 39px;
+  border-radius: 30px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: 0.3s;
+
+  &:hover {
+    color: #fff;
+    background-color: $color-grey;
+    border: 1px solid grey;
+  }
+}
+
+.box-subscribe-user {
+  .btn-primary {
+    padding: 18px 44px;
+    letter-spacing: 4px;
+  }
+}
+
+.page-control-content {
+  .btn-primary {
+    padding: 20px 63px;
+  }
+}
+.box-price-item {
+  .btn-info {
+    padding: 20px 62px;
+  }
+  .btn-primary {
+    padding: 20px 62px;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
