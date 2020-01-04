@@ -126,6 +126,9 @@ h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header .title {
@@ -142,7 +145,6 @@ h1 {
   font-size: 0.75rem;
   color: #6e7ea9;
   text-transform: uppercase;
-  width: 100%;
   -ms-flex-preferred-size: 69.7%;
       flex-basis: 69.7%;
 }
@@ -155,6 +157,10 @@ h1 {
 
 .header .header-nav li:last-child {
   margin: auto 0;
+}
+
+.header .header-list a {
+  color: #6e7ea9;
 }
 
 .header .header-logo {
@@ -192,11 +198,22 @@ h1 {
           justify-content: space-between;
 }
 
+.header .btn-menu {
+  display: none;
+  width: 21px;
+  height: 21px;
+  border: none;
+  background-color: transparent;
+}
+
+.header .btn-menu:focus {
+  outline: none;
+}
+
 .first-page {
   background: white url(../assets/img/1/header-bg.png);
   background-position: top;
-  padding-top: 54px;
-  padding-bottom: 326px;
+  padding: 54px 15px 326px 15px;
   margin-bottom: 0;
   position: relative;
 }
@@ -211,7 +228,7 @@ h1 {
   display: block;
   background: transparent url(../assets/img/1/header-screen.png) no-repeat;
   position: absolute;
-  width: 895px;
+  width: 47%;
   height: 740px;
   top: 190px;
   right: 0px;
@@ -554,7 +571,6 @@ h1 {
   z-index: 2;
   -ms-flex-preferred-size: 55%;
       flex-basis: 55%;
-  background: rgba(255, 255, 255, 0.95);
 }
 
 .page-software-layout .title-50 {
@@ -608,10 +624,11 @@ h1 {
   display: block;
   background: transparent url(../assets/img/3/programm-screen.png) no-repeat;
   position: absolute;
-  width: 931px;
+  width: 48%;
   height: 760px;
-  left: 0;
+  left: -2%;
   z-index: 1;
+  background-position: bottom;
 }
 
 .list-stat {
@@ -1455,7 +1472,99 @@ h1 {
   fill: #1085e4;
 }
 
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.modal ul {
+  margin: 0;
+}
+
+.modal li {
+  padding: 5px 0;
+  width: 100%;
+}
+
+.modal a {
+  color: #6e7ea9;
+  width: 80%;
+  display: block;
+  background-color: #cbdbe8;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 1px solid #cbdbe8;
+  letter-spacing: 2.5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 0 auto;
+  padding: 8px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.modal a:hover {
+  color: #6e7ea9;
+  background-color: #fff;
+  border: 1px solid darkgrey;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: transparent;
+}
+
+.btn-close:focus {
+  outline: none;
+}
+
 @media (max-width: 950px) {
+  .first-page {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+  .first-page h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 30px auto;
+  }
+  .first-page .btn-group a {
+    display: block;
+    margin: 15px auto;
+    max-width: 320px;
+  }
+  .first-page .header-nav {
+    display: none;
+  }
+  .first-page .btn-menu {
+    display: block;
+  }
+  .first-page .screen-img {
+    display: none;
+  }
+  .first-page .header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 60px;
+  }
   .page-company .list-company-item {
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
@@ -1545,12 +1654,33 @@ h1 {
   border: 1px solid darkgrey;
 }
 
-.btn-free {
+.header-nav .header-list .btn-free {
   padding: 21px 56px;
   margin-right: 0px;
   letter-spacing: 1.4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  color: #fff;
+}
+
+.header-nav .header-list .btn-free:hover {
+  color: #1085e4;
+}
+
+.modal .btn-free {
+  padding: 8px 0;
+  margin: 0px auto;
+  letter-spacing: 1.4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  background-color: #1085e4;
+}
+
+.modal .btn-free:hover {
+  color: #1085e4;
+  background-color: #fff;
+  border: 1px solid #1085e4;
 }
 
 .btn-group a + a {
