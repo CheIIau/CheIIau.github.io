@@ -1045,7 +1045,7 @@ h1 {
       flex-basis: 32%;
   margin-right: 30px;
   background-color: #edf6ff;
-  min-width: 270px;
+  min-width: 320px;
 }
 
 .box-price-item h3 {
@@ -1114,7 +1114,7 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding-bottom: 40px;
+  padding: 0 15px 40px 15px;
   margin-bottom: 81px;
 }
 
@@ -1149,6 +1149,7 @@ h1 {
   -ms-flex-preferred-size: 31.5%;
       flex-basis: 31.5%;
   padding-bottom: 36px;
+  min-width: 300px;
 }
 
 .page-team .team-name {
@@ -1468,6 +1469,10 @@ h1 {
   transition: 0.3s;
 }
 
+.footer .footer-social a {
+  margin-left: 10px;
+}
+
 .footer .footer-social a:hover svg {
   fill: #1085e4;
 }
@@ -1534,6 +1539,42 @@ h1 {
   outline: none;
 }
 
+@media (max-width: 1300px) {
+  .page-software .programm-screen {
+    width: 50vw;
+    height: 760px;
+    background-size: contain;
+    background-position: left;
+  }
+  .page-app {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .page-app .page-app-image {
+    width: 40%;
+    background-position: right;
+    top: auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .page-team {
+    padding-bottom: 0;
+    margin-bottom: 0px;
+  }
+  .page-team .title-40 {
+    padding-top: 30px;
+  }
+  .page-team .box-team {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 60px;
+  }
+  .page-team .team-item {
+    margin: 55px auto;
+  }
+}
+
 @media (max-width: 950px) {
   .first-page {
     margin: 0 auto;
@@ -1579,6 +1620,7 @@ h1 {
     padding: 101px 0 70px;
   }
   .grid {
+    margin: 80px auto;
         grid-template-areas: "a a" "b c" "d e " "f g" "h h";
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -1608,6 +1650,125 @@ h1 {
   .page-subscribe .box-subscribe-user {
     margin: 0 auto;
     width: 60%;
+  }
+  .page-software {
+    padding: 30px 0 40px 0;
+  .page-software .programm-screen {
+    display: none;
+  }
+  .page-software .page-software-layout {
+    margin: 0 auto;
+  }
+  .page-plan {
+    margin-bottom: 40px;
+  }
+  .page-plan .title-40 {
+    margin-bottom: 40px;
+  }
+  .page-plan .box-price {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .page-plan .box-price-item {
+    margin: 10px auto;
+  }
+  .page-clients {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .page-clients .title-40 {
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+  .page-clients .box-clients {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .page-clients .box-clients-item {
+    min-width: 300px;
+    margin: 15px auto;
+  }
+  .page-app .page-app-content {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .page-app .page-app-image {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .page-app .page-app-list,
+  .page-app .page-app-text {
+    margin: 0 auto;
+  }
+  .page-form .form-programm-screen {
+    display: none;
+  }
+  .page-form .message-form {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    margin: 0 auto;
+  }
+  .page-form .contact-form {
+    margin-right: 0px;
+  }
+  .page-form .title-50 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .page-subscribe .box-subscribe-user {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    margin: 40px auto;
+  }
+  .page-clients {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .page-plan {
+    margin-bottom: 40px;
+  }
+  .page-plan .title-40 {
+    margin-bottom: 31px;
+  }
+  .page-plan .box-price {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .page-plan .box-price-item {
+    width: 70%;
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 620px) {
+  .grid {
+    margin: 40px auto;
+        grid-template-areas: "a" "b" "c" "d" "e" "f" "g" "h";
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .page-form .title-50 {
+    font-size: 2.5rem;
+  }
+  .page-app .title-50 {
+    font-size: 2.5rem;
   }
 }
 

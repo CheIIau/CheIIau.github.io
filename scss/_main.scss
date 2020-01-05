@@ -187,7 +187,7 @@ h1 {
   background: white url(../assets/img/1/icon-bg.png);
   background-position: top;
   margin-top: 0;
-  padding: 101px 0 88px;
+  padding: 101px 15px 88px;
   .list-company {
     display: flex;
     flex-wrap: wrap;
@@ -829,7 +829,7 @@ h1 {
   flex-basis: 32%;
   margin-right: 30px;
   background-color: $color-whiteblue;
-  min-width: 270px;
+  min-width: 320px;
   h3 {
     margin-top: 88px;
     margin-bottom: 16px;
@@ -886,7 +886,7 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding-bottom: 40px;
+  padding: 0 15px 40px 15px;
   margin-bottom: 81px;
   .title-40 {
     text-align: center;
@@ -910,6 +910,7 @@ h1 {
     padding-top: 193px;
     flex-basis: 31.5%;
     padding-bottom: 36px;
+    min-width: 300px;
   }
   .team-name {
     color: $color-dark-blue;
@@ -1141,6 +1142,9 @@ h1 {
       fill: $color-white;
       transition: 0.3s;
     }
+    a{
+      margin-left: 10px;
+    }
     a:hover {
       svg {
         fill: $color-blue;
@@ -1205,6 +1209,43 @@ h1 {
 
 //MEDIA
 
+@media (max-width: 1300px) {
+  .page-software {
+    .programm-screen {
+      width: 50vw;
+      height: 760px;
+      background-size: contain;
+      background-position: left;
+    }
+  }
+  .page-app {
+    padding-left: 15px;
+    padding-right: 15px;
+    .page-app-image {
+      width: 40%;
+      background-position: right;
+      top: auto;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .page-team {
+    padding-bottom: 0;
+    margin-bottom: 0px;
+    .title-40 {
+      padding-top: 30px;
+    }
+    .box-team {
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+    .team-item {
+      margin: 55px auto;
+    }
+  }
+}
+
 @media (max-width: 950px) {
   .first-page {
     margin: 0 auto;
@@ -1245,6 +1286,7 @@ h1 {
     padding: 101px 0 70px;
   }
   .grid {
+    margin: 80px auto;
     grid-template-areas:
       "a a"
       "b c"
@@ -1274,6 +1316,125 @@ h1 {
     .box-subscribe-user {
       margin: 0 auto;
       width: 60%;
+    }
+  }
+  .page-software {
+    padding: 30px 0 40px 0;
+    .programm-screen {
+      display: none;
+    }
+    .page-software-layout {
+      margin: 0 auto;
+    }
+  }
+  .page-plan {
+    .title-40 {
+      margin-bottom: 40px;
+    }
+    margin-bottom: 40px;
+    .box-price {
+      flex-wrap: wrap;
+    }
+    .box-price-item {
+      margin: 10px auto;
+    }
+  }
+  .page-clients {
+    .title-40 {
+      text-align: center;
+      padding-top: 20px;
+      margin-bottom: 20px;
+    }
+    padding-left: 15px;
+    padding-right: 15px;
+    .box-clients {
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .box-clients-item {
+      min-width: 300px;
+      margin: 15px auto;
+    }
+  }
+  .page-app {
+    .page-app-content {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .page-app-image {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    .page-app-list,
+    .page-app-text {
+      margin: 0 auto;
+    }
+  }
+  .page-form {
+    .form-programm-screen {
+      display: none;
+    }
+    .message-form {
+      flex-basis: 80%;
+      margin: 0 auto;
+    }
+    .contact-form{
+      margin-right: 0px;
+    }
+    .title-50{
+      text-align: center;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .page-subscribe {
+    .box-subscribe-user {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .grid {
+    margin: 40px auto;
+  }
+  .page-clients {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .page-plan {
+    margin-bottom: 40px;
+    .title-40 {
+      margin-bottom: 31px;
+    }
+    .box-price {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+    .box-price-item {
+      width: 70%;
+      padding-bottom: 70px;
+    }
+  }
+}
+@media (max-width: 620px) {
+  .grid {
+    margin: 40px auto;
+    grid-template-areas: "a" "b" "c" "d" "e" "f" "g" "h";
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .page-form{
+    .title-50{
+      font-size: 2.5rem;
+    }
+  }
+  .page-app{
+    .title-50{
+      font-size: 2.5rem;
     }
   }
 }
