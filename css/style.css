@@ -545,7 +545,7 @@ h1 {
   background-image: url(../assets/img/4/bg-page-software.png);
   background-size: cover;
   background-position: bottom;
-  padding: 121px 0 145px 0;
+  padding: 121px 15px 145px 15px;
   position: relative;
 }
 
@@ -639,6 +639,8 @@ h1 {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-top: 76px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .list-stat > li {
@@ -680,7 +682,7 @@ h1 {
 }
 
 .page-stat {
-  padding: 96px 0 96px 0;
+  padding: 96px 15px 96px 15px;
   background: #edf6ff;
   background-size: cover;
   background-position: top;
@@ -805,8 +807,7 @@ h1 {
 }
 
 .page-analytics {
-  padding-top: 123px;
-  padding-bottom: 135px;
+  padding: 123px 15px 135px 15px;
   background-image: url(../assets/img/4/bg3.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -847,7 +848,7 @@ h1 {
 }
 
 .page-control {
-  padding: 126px 0 136px 0;
+  padding: 126px 15px 136px 15px;
   background-image: url(../assets/img/4/bg4.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -898,8 +899,7 @@ h1 {
 
 .page-screen {
   text-align: center;
-  padding-top: 67px;
-  padding-bottom: 0;
+  padding: 67px 15px 0 15px;
   margin-bottom: 100px;
   background-color: #edf6ff;
 }
@@ -921,6 +921,8 @@ h1 {
 }
 
 .page-clients {
+  padding-left: 15px;
+  padding-right: 15px;
   margin-top: 118px;
   margin-bottom: 106px;
   position: relative;
@@ -958,6 +960,8 @@ h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 63px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .box-clients-item {
@@ -1555,6 +1559,47 @@ h1 {
     background-position: right;
     top: auto;
   }
+  .page-screen .container_image {
+    display: block;
+    margin: 0 auto;
+  }
+  .page-screen .container_image img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1050px) {
+  .title-50,
+  .title-40 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .page-analytics {
+    padding: 60px 15px 60px 15px;
+  }
+  .page-analytics .page-analytics-image {
+    display: none;
+  }
+  .page-analytics .page-analytics-flex {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .page-analytics .page-analytics-layout {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    margin: 0 auto;
+  }
+  .page-control {
+    padding: 60px 15px 60px 15px;
+  }
+  .page-control .page-control-image {
+    display: none;
+  }
+  .page-control .page-control-content {
+    margin: 0 auto;
+    width: 80%;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -1652,13 +1697,23 @@ h1 {
     width: 60%;
   }
   .page-software {
-    padding: 30px 0 40px 0;
+    padding: 30px 15px 40px 15px;
   }
   .page-software .programm-screen {
     display: none;
   }
+  .page-software .title-50 {
+    min-width: 320px;
+  }
   .page-software .page-software-layout {
     margin: 0 auto;
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+  }
+  .page-software .page-software-flex {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .page-plan {
     margin-bottom: 40px;
@@ -1674,17 +1729,14 @@ h1 {
     margin: 10px auto;
   }
   .page-clients {
-    padding-left: 15px;
-    padding-right: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
   .page-clients .title-40 {
-    text-align: center;
     padding-top: 20px;
     margin-bottom: 20px;
   }
   .page-clients .box-clients {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     margin-top: 20px;
   }
   .page-clients .box-clients-item {
@@ -1716,24 +1768,30 @@ h1 {
   .page-form .contact-form {
     margin-right: 0px;
   }
-  .page-form .title-50 {
-    text-align: center;
-  }
 }
 
 @media (max-width: 800px) {
   .page-subscribe .box-subscribe-user {
     width: 100%;
   }
+  .page-screen {
+    padding: 10px 15px 0 15px;
+    margin-bottom: 0;
+  }
+  .page-screen .title-40 {
+    margin-bottom: 30px;
+  }
+  .page-stat {
+    padding: 40px 15px 40px 15px;
+  }
+  .page-app {
+    padding-top: 20px;
+  }
 }
 
 @media (max-width: 700px) {
   .grid {
     margin: 40px auto;
-  }
-  .page-clients {
-    margin-top: 40px;
-    margin-bottom: 40px;
   }
   .page-plan {
     margin-bottom: 40px;
@@ -1765,11 +1823,16 @@ h1 {
     padding-left: 30px;
     padding-right: 30px;
   }
-  .page-form .title-50 {
-    font-size: 2.5rem;
+  .page-software .page-software-list {
+    width: 80%;
   }
-  .page-app .title-50 {
-    font-size: 2.5rem;
+  .page-stat .circle, .page-stat .rhombus {
+    display: none;
+  }
+  .page-stat .list-stat > li {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    margin-bottom: 20px;
   }
 }
 

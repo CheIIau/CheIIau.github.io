@@ -412,7 +412,7 @@ h1 {
   background-size: cover;
   background-position: bottom;
   // height: 1002px;
-  padding: 121px 0 145px 0;
+  padding: 121px 15px 145px 15px;
   position: relative;
 }
 
@@ -491,6 +491,7 @@ h1 {
   list-style-type: none;
   justify-content: space-around;
   margin-top: 76px;
+  flex-wrap: wrap;
 
   & > li {
     color: $color-greyblue;
@@ -530,7 +531,7 @@ h1 {
 }
 
 .page-stat {
-  padding: 96px 0 96px 0;
+  padding: 96px 15px 96px 15px;
   background: $color-whiteblue;
   background-size: cover;
   background-position: top;
@@ -632,8 +633,7 @@ h1 {
 }
 
 .page-analytics {
-  padding-top: 123px;
-  padding-bottom: 135px;
+  padding: 123px 15px 135px 15px;
   background-image: url(../assets/img/4/bg3.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -668,7 +668,7 @@ h1 {
 }
 
 .page-control {
-  padding: 126px 0 136px 0;
+  padding: 126px 15px 136px 15px;
   background-image: url(../assets/img/4/bg4.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -716,8 +716,7 @@ h1 {
 
 .page-screen {
   text-align: center;
-  padding-top: 67px;
-  padding-bottom: 0;
+  padding: 67px 15px 0 15px;
   margin-bottom: 100px;
   background-color: $color-whiteblue;
 }
@@ -734,6 +733,8 @@ h1 {
 }
 
 .page-clients {
+  padding-left: 15px;
+  padding-right: 15px;
   margin-top: 118px;
   margin-bottom: 106px;
   position: relative;
@@ -764,6 +765,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-top: 63px;
+  flex-wrap: wrap;
 }
 
 .box-clients-item {
@@ -1142,7 +1144,7 @@ h1 {
       fill: $color-white;
       transition: 0.3s;
     }
-    a{
+    a {
       margin-left: 10px;
     }
     a:hover {
@@ -1225,6 +1227,46 @@ h1 {
       width: 40%;
       background-position: right;
       top: auto;
+    }
+  }
+  .page-screen {
+    .container_image {
+      display: block;
+      margin: 0 auto;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .title-50,
+  .title-40 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .page-analytics {
+    padding: 60px 15px 60px 15px;
+    .page-analytics-image {
+      display: none;
+    }
+    .page-analytics-flex {
+      justify-content: space-between;
+    }
+    .page-analytics-layout {
+      flex-basis: 80%;
+      margin: 0 auto;
+    }
+  }
+  .page-control {
+    padding: 60px 15px 60px 15px;
+    .page-control-image {
+      display: none;
+    }
+    .page-control-content {
+      margin: 0 auto;
+      width: 80%;
     }
   }
 }
@@ -1319,12 +1361,19 @@ h1 {
     }
   }
   .page-software {
-    padding: 30px 0 40px 0;
+    padding: 30px 15px 40px 15px;
     .programm-screen {
       display: none;
     }
+    .title-50{
+      min-width: 320px;
+    }
     .page-software-layout {
       margin: 0 auto;
+      flex-basis: 80%;
+    }
+    .page-software-flex{
+      justify-content: space-between;
     }
   }
   .page-plan {
@@ -1340,15 +1389,13 @@ h1 {
     }
   }
   .page-clients {
+    margin-top: 40px;
+    margin-bottom: 40px;
     .title-40 {
-      text-align: center;
       padding-top: 20px;
       margin-bottom: 20px;
     }
-    padding-left: 15px;
-    padding-right: 15px;
     .box-clients {
-      flex-wrap: wrap;
       margin-top: 20px;
     }
     .box-clients-item {
@@ -1380,11 +1427,8 @@ h1 {
       flex-basis: 80%;
       margin: 0 auto;
     }
-    .contact-form{
+    .contact-form {
       margin-right: 0px;
-    }
-    .title-50{
-      text-align: center;
     }
   }
 }
@@ -1394,14 +1438,23 @@ h1 {
       width: 100%;
     }
   }
+  .page-screen {
+    padding: 10px 15px 0 15px;
+    margin-bottom: 0;
+    .title-40 {
+      margin-bottom: 30px;
+    }
+  }
+  .page-stat{
+    padding: 40px 15px 40px 15px;
+  }
+  .page-app{
+    padding-top: 20px;
+  }
 }
 @media (max-width: 700px) {
   .grid {
     margin: 40px auto;
-  }
-  .page-clients {
-    margin-top: 40px;
-    margin-bottom: 40px;
   }
   .page-plan {
     margin-bottom: 40px;
@@ -1427,14 +1480,18 @@ h1 {
     padding-left: 30px;
     padding-right: 30px;
   }
-  .page-form{
-    .title-50{
-      font-size: 2.5rem;
+  .page-software{
+    .page-software-list{
+      width: 80%;
     }
   }
-  .page-app{
-    .title-50{
-      font-size: 2.5rem;
+  .page-stat{
+    .circle, .rhombus{
+      display: none;
+    }
+    .list-stat>li{
+      flex-basis: 50%;
+      margin-bottom: 20px;
     }
   }
 }
