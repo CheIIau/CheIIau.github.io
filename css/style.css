@@ -239,7 +239,7 @@ h1 {
   background: white url(../assets/img/1/icon-bg.png);
   background-position: top;
   margin-top: 0;
-  padding: 101px 0 88px;
+  padding: 101px 15px 88px;
 }
 
 .page-company .list-company {
@@ -1653,6 +1653,7 @@ h1 {
   }
   .page-software {
     padding: 30px 0 40px 0;
+  }
   .page-software .programm-screen {
     display: none;
   }
