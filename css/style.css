@@ -1855,6 +1855,9 @@ h1 {
   .subscribe-form-child p {
     max-width: 320px;
   }
+  .page-software .title-50 {
+    min-width: 300px;
+  }
 }
 
 .btn-primary {
