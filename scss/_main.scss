@@ -1308,6 +1308,8 @@ h1 {
     }
     .btn-menu {
       display: block;
+      align-self: flex-start;
+      margin-top: 8.5px;
     }
     .screen-img {
       display: none;
@@ -1365,14 +1367,14 @@ h1 {
     .programm-screen {
       display: none;
     }
-    .title-50{
+    .title-50 {
       min-width: 320px;
     }
     .page-software-layout {
       margin: 0 auto;
       flex-basis: 80%;
     }
-    .page-software-flex{
+    .page-software-flex {
       justify-content: space-between;
     }
   }
@@ -1445,10 +1447,10 @@ h1 {
       margin-bottom: 30px;
     }
   }
-  .page-stat{
+  .page-stat {
     padding: 40px 15px 40px 15px;
   }
-  .page-app{
+  .page-app {
     padding-top: 20px;
   }
 }
@@ -1480,16 +1482,17 @@ h1 {
     padding-left: 30px;
     padding-right: 30px;
   }
-  .page-software{
-    .page-software-list{
+  .page-software {
+    .page-software-list {
       width: 80%;
     }
   }
-  .page-stat{
-    .circle, .rhombus{
+  .page-stat {
+    .circle,
+    .rhombus {
       display: none;
     }
-    .list-stat>li{
+    .list-stat > li {
       flex-basis: 50%;
       margin-bottom: 20px;
     }

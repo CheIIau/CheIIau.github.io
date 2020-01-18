@@ -1641,6 +1641,9 @@ h1 {
   }
   .first-page .btn-menu {
     display: block;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-top: 8.5px;
   }
   .first-page .screen-img {
     display: none;
@@ -1826,7 +1829,8 @@ h1 {
   .page-software .page-software-list {
     width: 80%;
   }
-  .page-stat .circle, .page-stat .rhombus {
+  .page-stat .circle,
+  .page-stat .rhombus {
     display: none;
   }
   .page-stat .list-stat > li {
