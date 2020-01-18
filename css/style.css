@@ -1817,6 +1817,17 @@ h1 {
 }
 
 @media (max-width: 620px) {
+  .box-subscribe-user button.btn-primary {
+    padding: 18px 13px;
+    letter-spacing: 2px;
+  }
+  .box-subscribe-user input {
+    padding-right: 127px;
+    padding-left: 20px;
+  }
+  .first-page h1 {
+    font-size: 3rem;
+  }
   .grid {
     margin: 40px auto;
         grid-template-areas: "a" "b" "c" "d" "e" "f" "g" "h";
@@ -1837,6 +1848,12 @@ h1 {
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .subscribe-form-child p {
+    max-width: 320px;
   }
 }
 
