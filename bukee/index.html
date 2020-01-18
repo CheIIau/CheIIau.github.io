@@ -3,8 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#65e496">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#65e496">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i|Roboto+Slab:100,400,700&display=swap&subset=cyrillic"
         rel="stylesheet">
@@ -16,6 +23,13 @@
         <header>
             <div class="header">
                 <a href="" class="header__logo"></a>
+                <button class="header__btn" type="button"><svg height="32px" id="Layer_1"
+                        style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 3.7 32 32" width="32px"
+                         xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path fill="#ffffff"
+                            d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
+                    </svg></button>
                 <ul class="header-list">
                     <li class="header-list__item active"><a href="" class="header-list__link">Home</a></li>
                     <li class="header-list__item"><a href="" class="header-list__link">About</a></li>
@@ -374,6 +388,20 @@
             </div>
         </div>
     </footer>
+    <div class="modal">
+        <button class="modal-closebtn">X</button>
+        <ul class="modal-list">
+            <li class="modal-list__item modal_active"><a href="" class="modal-list__link">Home</a></li>
+            <li class="modal-list__item"><a href="" class="modal-list__link">About</a></li>
+            <li class="modal-list__item"><a href="" class="modal-list__link">Contents</a></li>
+            <li class="modal-list__item"><a href="" class="modal-list__link">Books</a></li>
+            <li class="modal-list__item"><a href="" class="modal-list__link">Education</a></li>
+            <li class="modal-list__item"><a href="" class="modal-list__link">Skills</a></li>
+            <li class="modal-list__item"><a href="" class="modal-list__link">Portfolio</a></li>
+            <li class="modal-list__item"><a href="" class="modal-list__link">Clients</a></li>
+            <li class="modal-list__item"><a href="" class="modal-list__link">Contact</a></li>
+        </ul>
+    </div>
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://kit.fontawesome.com/e3bead9f20.js" crossorigin="anonymous"></script>
@@ -386,6 +414,12 @@
                 dots: true,
                 arrows: false,
                 centerMode: true
+            });
+            $(".header__btn").click(function () {
+                $(".modal").show()
+            });
+            $(".modal-closebtn").click(function () {
+                $(".modal").hide()
             });
         });
     </script>
