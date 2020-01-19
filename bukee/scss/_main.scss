@@ -64,8 +64,6 @@ body {
     position: absolute;
     top: 38px;
     right: 15%;
-    width: 32px;
-    height: 32px;
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -910,15 +908,16 @@ body {
   display: none;
   position: absolute;
   z-index: 10;
-  top: 30px;
+  top: 24px;
   left: 0;
   right: 0;
   margin: 0 auto;
   width: 80%;
   text-align: center;
-  background-color: $color-white;
+  background-color: rgba(255,255,255,0.9);;
   border: 1px solid $color-light-grey;
   box-sizing: border-box;
+  border-radius: 20px;
   &-list {
     margin: 0;
     &__item {
@@ -929,7 +928,7 @@ body {
       color: $color-oceangreen;
       width: 80%;
       display: block;
-      background-color: $color-white;
+      background-color: rgba(255,255,255,0.8);
       text-transform: uppercase;
       font-size: 0.75rem;
       font-weight: bold;
@@ -949,15 +948,15 @@ body {
   }
   &-closebtn {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 9px;
+    right: -2px;
     border: none;
     background-color: transparent;
   }
   &_active {
     a {
       color: $color-white;
-      background-color: $color-oceangreen;
+      background-color: $color-greyblue;
     }
   }
 }

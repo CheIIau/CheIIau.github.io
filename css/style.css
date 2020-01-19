@@ -735,6 +735,8 @@ h1 {
   top: -17px;
   right: 0px;
   overflow: hidden;
+  min-height: 232px;
+  min-width: 260px;
 }
 
 .page-app-content {
@@ -1079,6 +1081,7 @@ h1 {
 .box-price-item {
   text-align: center;
   height: 623px;
+  max-width: 360px;
 }
 
 .box-price-item h3 {
@@ -1483,13 +1486,14 @@ h1 {
   display: none;
   position: absolute;
   z-index: 10;
-  top: 30px;
+  border-radius: 30px;
+  top: 52px;
   left: 0;
   right: 0;
   margin: 0 auto;
   width: 80%;
   text-align: center;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   border: 1px solid #d9d9d9;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1508,7 +1512,7 @@ h1 {
   color: #6e7ea9;
   width: 80%;
   display: block;
-  background-color: #cbdbe8;
+  background-color: rgba(203, 219, 232, 0.9);
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: bold;
@@ -1531,8 +1535,8 @@ h1 {
 
 .btn-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: -1px;
   border: none;
   background: transparent;
 }
@@ -1597,6 +1601,19 @@ h1 {
   .page-control .page-control-content {
     margin: 0 auto;
     width: 80%;
+  }
+  .page-plan {
+    margin-bottom: 40px;
+  }
+  .page-plan .title-40 {
+    margin-bottom: 40px;
+  }
+  .page-plan .box-price {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .page-plan .box-price-item {
+    margin: 10px auto;
   }
 }
 
@@ -1716,19 +1733,6 @@ h1 {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .page-plan {
-    margin-bottom: 40px;
-  }
-  .page-plan .title-40 {
-    margin-bottom: 40px;
-  }
-  .page-plan .box-price {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .page-plan .box-price-item {
-    margin: 10px auto;
-  }
   .page-clients {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -1744,11 +1748,18 @@ h1 {
     min-width: 300px;
     margin: 15px auto;
   }
+  .page-app .page-app-layout {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .page-app .page-app-content {
     width: 80%;
     margin: 0 auto;
   }
   .page-app .page-app-image {
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
@@ -1768,6 +1779,10 @@ h1 {
   }
   .page-form .contact-form {
     margin-right: 0px;
+  }
+  .page-app-videolink {
+    margin: 0 auto;
+    max-width: 240px;
   }
 }
 
@@ -1815,6 +1830,10 @@ h1 {
 }
 
 @media (max-width: 620px) {
+  .page-app-list li {
+    display: block;
+    margin: 10px auto 0;
+  }
   .box-subscribe-user button.btn-primary {
     padding: 18px 13px;
     letter-spacing: 2px;
@@ -1855,6 +1874,15 @@ h1 {
   }
   .page-software .title-50 {
     min-width: 300px;
+  }
+  .page-company .list-company {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 

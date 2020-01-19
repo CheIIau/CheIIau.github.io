@@ -247,7 +247,7 @@
                         <li><a class="page-app-ios" href="" target="_blank"></a></li>
                     </ul>
                 </div>
-                <a href=""><img class="page-app-image" src="assets/img/4/video.png" alt="Video"></a>
+                <a class="page-app-videolink" href=""><img class="page-app-image" src="assets/img/4/video.png" alt="Video"></a>
             </div>
         </div>
     </div>
@@ -549,7 +549,12 @@
         </div>
     </footer>
     <div class="modal">
-        <button class="btn-close">X</button>
+        <button class="btn-close"><svg viewBox="0 0 32 32" height="32px" width="32px"
+            xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path fill="#1085e4"
+                d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z" />
+            </svg></button>
         <ul>
             <li><a href=""><span>Home</span></a></li>
             <li><a href=""><span>Features</span></a></li>
@@ -579,10 +584,10 @@
                 $(".social-face3").fadeIn();
             });
             $(".btn-menu").click(function () {
-                $(".modal").show()
+                $(".modal").fadeIn()
             });
             $(".btn-close").click(function () {
-                $(".modal").hide()
+                $(".modal").fadeOut()
             });
         });
 

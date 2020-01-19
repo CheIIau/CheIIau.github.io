@@ -150,8 +150,6 @@ h1 {
 
 .header .btn-menu {
   display: none;
-  width: 32px;
-  height: 32px;
   border: none;
   background-color: transparent;
   &:focus {
@@ -581,6 +579,8 @@ h1 {
   top: -17px;
   right: 0px;
   overflow: hidden;
+  min-height: 232px;
+  min-width: 260px;
 }
 
 .page-app-content {
@@ -857,6 +857,7 @@ h1 {
 .box-price-item {
   text-align: center;
   height: 623px;
+  max-width: 360px;
   h3 {
     height: 46px;
     font-size: 4.375rem;
@@ -1159,13 +1160,14 @@ h1 {
   display: none;
   position: absolute;
   z-index: 10;
-  top: 30px;
+  border-radius: 30px;
+  top: 52px;
   left: 0;
   right: 0;
   margin: 0 auto;
   width: 80%;
   text-align: center;
-  background-color: $color-white;
+  background-color: rgba($color: #fff, $alpha: 0.9);
   border: 1px solid $color-light-grey;
   box-sizing: border-box;
   ul {
@@ -1179,7 +1181,7 @@ h1 {
     color: $color-sky-blue;
     width: 80%;
     display: block;
-    background-color: $color-greyblue;
+    background-color: rgba($color: $color-greyblue, $alpha: 0.9);
     text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: bold;
@@ -1200,8 +1202,8 @@ h1 {
 
 .btn-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: -1px;
   border: none;
   background: transparent;
   &:focus {
@@ -1267,6 +1269,18 @@ h1 {
     .page-control-content {
       margin: 0 auto;
       width: 80%;
+    }
+  }
+  .page-plan {
+    .title-40 {
+      margin-bottom: 40px;
+    }
+    margin-bottom: 40px;
+    .box-price {
+      flex-wrap: wrap;
+    }
+    .box-price-item {
+      margin: 10px auto;
     }
   }
 }
@@ -1378,18 +1392,7 @@ h1 {
       justify-content: space-between;
     }
   }
-  .page-plan {
-    .title-40 {
-      margin-bottom: 40px;
-    }
-    margin-bottom: 40px;
-    .box-price {
-      flex-wrap: wrap;
-    }
-    .box-price-item {
-      margin: 10px auto;
-    }
-  }
+  
   .page-clients {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -1406,11 +1409,15 @@ h1 {
     }
   }
   .page-app {
+    .page-app-layout {
+      flex-direction: column;
+    }
     .page-app-content {
       width: 80%;
       margin: 0 auto;
     }
     .page-app-image {
+      position: relative;
       bottom: 0;
       left: 0;
       right: 0;
@@ -1432,6 +1439,10 @@ h1 {
     .contact-form {
       margin-right: 0px;
     }
+  }
+  .page-app-videolink{
+    margin: 0 auto;
+    max-width: 240px;
   }
 }
 @media (max-width: 800px) {
@@ -1474,6 +1485,12 @@ h1 {
   }
 }
 @media (max-width: 620px) {
+  .page-app-list {
+    li {
+      display: block;
+      margin: 10px auto 0;
+    }
+  }
   .box-subscribe-user {
     button.btn-primary {
       padding: 18px 13px;
@@ -1522,6 +1539,12 @@ h1 {
   .page-software {
     .title-50 {
       min-width: 300px;
+    }
+  }
+  .page-company {
+    .list-company {
+      flex-direction: column;
+      justify-content: center;
     }
   }
 }
