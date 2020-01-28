@@ -383,6 +383,7 @@ a:hover {
     justify-content: space-between;
     width: 160px;
     &__item {
+      color: $color-white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -391,6 +392,9 @@ a:hover {
       height: 32px;
       border-radius: 100%;
       background-color: $color-darkblue;
+      i {
+        transform: translate(5%, -3%);
+      }
     }
   }
   &-apps {

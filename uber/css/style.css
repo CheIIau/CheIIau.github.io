@@ -481,6 +481,7 @@ a:hover {
 }
 
 .footer-social__item {
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -495,6 +496,11 @@ a:hover {
   height: 32px;
   border-radius: 100%;
   background-color: #070716;
+}
+
+.footer-social__item i {
+  -webkit-transform: translate(5%, -3%);
+          transform: translate(5%, -3%);
 }
 
 .footer-apps {
