@@ -1,0 +1,14 @@
+.btn {
+  border: none;
+  text-transform: uppercase;
+  color: $color-white;
+  text-align: center;
+  text-shadow: 0.707px 0.707px 0px rgba(0, 0, 0, 0.21);
+  background-image: linear-gradient(to top, #1eacc7, #4ce2ff);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  &:hover {
+    background-image: none;
+    background-color: $color-blue;
+  }
+}
