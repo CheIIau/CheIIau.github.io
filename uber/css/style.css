@@ -784,6 +784,8 @@ a:hover {
     padding-right: 0;
     border: none;
     margin: 10px 0;
+    width: 100%;
+    text-align: center;
   }
   .menu__link {
     font-size: 16px;
