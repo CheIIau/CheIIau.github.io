@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="http://vk.com/js/api/openapi.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="greetings_text text-center"></div>
+        <button id="login" type="button" class="btn btn-primary btn-lg">Log in</button>
+        <div class="col-md-12 text-center mb-3">
+            <div class="btn-group mx-auto" role="group" aria-label="Methods">
+                <button id="getFriends" type="button" class="btn btn-primary btn-lg">Друзья</button>
+                <button id="getPhotos" type="button" class="btn btn-success btn-lg">Фото</button>
+                <button id="getNews" type="button" class="btn btn-info btn-lg">Новости</button>
+            </div>
+        </div>
+        <div class="text-center switches-block">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                <label class="custom-control-label switch-friends-online switch-off" for="customSwitch1">Друзья
+                    онлайн</label>
+            </div>
+        </div>
+
+        <div id="data-container"></div>
+    </div>
+
+    <script src="model.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

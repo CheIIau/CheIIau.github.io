@@ -1,0 +1,40 @@
+button#login {
+  display: block;
+  margin: 20px auto;
+}
+
+.greetings_text {
+  display: none;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.card-img {
+  border-radius: 100%;
+  max-width: 100px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-body {
+  padding-right: 0px;
+}
+
+.switch-friends-online {
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.switches-block {
+  display: none;
+  margin-bottom: 10px;
+}
+
+.media img {
+  border-radius: 100%;
+}
+/*# sourceMappingURL=style.css.map */
