@@ -31,7 +31,7 @@ newsBtn.addEventListener('click', () => {
   getNews(newsFilterText);
 });
 
-switchFriendsOnline.addEventListener('click', (event) => {
+switchFriendsOnline.addEventListener('click', () => {
   if (switchFriendsOnline.classList.contains('switch-off')) {
     switchFriendsOnline.classList.toggle('switch-off');
     getFriends(friendsFilterOnline);
@@ -80,14 +80,14 @@ function friendsFilterAll(friendsArr) {
 }
 
 function newsFilterText(newsArr) {
-  let itemsArr = newsArr.items.filter((element) => {
+  const itemsArr = newsArr.items.filter((element) => {
     return element.text.length > 10;
   });
   return { groups: newsArr.groups, items: itemsArr };
 }
 
 function createFriendCards(cards) {
-  let dataContainer = document.getElementById('data-container');
+  const dataContainer = document.getElementById('data-container');
   dataContainer.innerHTML = '';
 
   const cardContainer = document.createElement('div');
@@ -102,7 +102,7 @@ function createFriendCards(cards) {
 }
 
 function createUserDataCard(cardUserData, element) {
-  let { first_name, last_name, id, photo_100 } = element;
+  const { first_name, last_name, id, photo_100 } = element;
 
   const userName = document.createElement('a');
   userName.href = `http://vk.com/id${id}`;
@@ -135,7 +135,7 @@ function createUserDataCard(cardUserData, element) {
 }
 
 function createNewsCards(news) {
-  let dataContainer = document.getElementById('data-container');
+  const dataContainer = document.getElementById('data-container');
   dataContainer.innerHTML = '';
 
   const newsContainer = document.createElement('ul');
@@ -146,7 +146,7 @@ function createNewsCards(news) {
     'mt-5',
   );
   dataContainer.append(newsContainer);
-  let newsItems = news.items;
+  const newsItems = news.items;
   const newsGroups = news.groups;
   newsItems.forEach((element) =>
     createNewsDataCard(newsContainer, newsGroups, element),
@@ -170,7 +170,7 @@ function createNewsDataCard(newsContainer, newsGroups, element) {
   const groupLogoImage = new Image();
   groupLogoImage.classList.add('group-logo');
   groupLogoImage.src = group.photo_100;
-  groupLogoRef.classList.add('mr-3');
+  groupLogoRef.classList.add('col-2');
   groupLogoRef.append(groupLogoImage);
   article.prepend(groupLogoRef);
 
@@ -179,11 +179,11 @@ function createNewsDataCard(newsContainer, newsGroups, element) {
   articleContent.textContent = element.text;
   article.append(articleContent);
 
-  let articleRef = document.createElement('a');
+  const articleRef = document.createElement('a');
   articleRef.classList.add('mt-0', 'mb-1');
   articleRef.href = `http://vk.com/club${group.id}`;
 
-  let articleTitle = document.createElement('h5');
+  const articleTitle = document.createElement('h5');
   articleTitle.textContent = group.name;
   articleRef.append(articleTitle);
   articleContent.prepend(articleRef);

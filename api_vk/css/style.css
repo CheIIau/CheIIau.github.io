@@ -38,10 +38,6 @@ button#login {
   border-radius: 100%;
 }
 
-.media-body {
-  word-break: break-all;
-}
-
 hr {
   width: 100%;
 }
@@ -50,7 +46,7 @@ hr {
   display: none;
   position: fixed;
   z-index: 2;
-  padding-top: 100px;
+  padding-top: 80px;
   /* Location of the box */
   left: 0;
   top: 0;
@@ -69,8 +65,9 @@ hr {
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
   max-width: 700px;
+  max-height: 550px;
+  width: auto;
 }
 
 .close {
