@@ -110,7 +110,7 @@ function createUserDataCard(cardUserData, element) {
   userName.classList.add('card-title');
 
   const imageContainer = document.createElement('div');
-  imageContainer.classList.add('col-md-1', 'offset-md-1', 'my-2');
+  imageContainer.classList.add('col-md-1', 'col-4', 'offset-md-1', 'my-2');
   const imageLink = document.createElement('a');
   imageLink.href = `http://vk.com/id${id}`;
   const avatar = new Image();
@@ -120,7 +120,7 @@ function createUserDataCard(cardUserData, element) {
   imageContainer.append(imageLink);
 
   const cardUserContainer = document.createElement('div');
-  cardUserContainer.classList.add('col-md-3', 'my-2');
+  cardUserContainer.classList.add('col-md-3', 'col-8', 'my-2');
   const cardBody = document.createElement('div');
   cardBody.classList.add('card-body');
   cardBody.append(userName);
