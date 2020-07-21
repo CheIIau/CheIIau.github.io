@@ -1,5 +1,5 @@
-let Auth = {
-  login: function (appId) {
+const Auth = {
+  login: function (appId, perms) {
     return new Promise(function (resolve, reject) {
       VK.init({
         apiId: appId,
@@ -11,7 +11,7 @@ let Auth = {
         } else {
           reject(new Error('Не удалось авторизоваться'));
         }
-      });
+      }, perms);
     });
   },
 };
