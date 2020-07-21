@@ -38,6 +38,10 @@ button#login {
   border-radius: 100%;
 }
 
+.media-body {
+  word-break: normal;
+}
+
 hr {
   width: 100%;
 }
