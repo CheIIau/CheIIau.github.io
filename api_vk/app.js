@@ -58,13 +58,12 @@ function getFriends(friendsFilter) {
 }
 
 function getNews(newsFilter) {
-  console.log('123');
   new Promise((resolve, reject) => {
     VK.Api.call('newsfeed.get', { filters: 'post', v: '5.120' }, function (r) {
+      console.log(r);
       if (r.response) {
         switchesBlock.style.display = 'NONE';
         const newsArr = newsFilter(r.response);
-        console.log(r.response);
         resolve(newsArr);
       } else {
         console.log('нет ответа');
