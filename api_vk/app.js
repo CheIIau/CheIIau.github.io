@@ -12,7 +12,7 @@ modalWindow.addEventListener('click', () => {
 
 loginBtn.addEventListener('click', () => {
   const greetingsText = document.querySelector('.greetings_text');
-  Auth.login(7535975, 2 | 4 | 262144);
+  Auth.login(7535975, 2 | 4 | 8192 | 262144);
   VK.Api.call('users.get', { v: '5.120' }, function (r) {
     if (r.response) {
       greetingsText.textContent = `Привет, ${r.response[0].first_name} ${r.response[0].last_name}`;
