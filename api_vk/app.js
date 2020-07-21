@@ -155,7 +155,8 @@ function createUserDataCard(cardUserData, element) {
 function createNewsCards(news) {
   const dataContainer = document.getElementById('data-container');
   dataContainer.innerHTML = '';
-
+  console.log('123');
+  alert('asd');
   const newsContainer = document.createElement('ul');
   newsContainer.classList.add(
     'list-unstyled',
@@ -179,7 +180,7 @@ function createNewsDataCard(newsContainer, newsGroups, element) {
       return group.id == element.source_id;
     }
   });
-  console.log(123);
+
   const article = document.createElement('li');
   article.classList.add('media', 'my-3');
 
