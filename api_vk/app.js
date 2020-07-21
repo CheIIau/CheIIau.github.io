@@ -161,7 +161,7 @@ function createNewsDataCard(newsContainer, newsGroups, element) {
       return group.id == element.source_id;
     }
   });
-
+  console.log(123);
   const article = document.createElement('li');
   article.classList.add('media', 'my-3');
 
