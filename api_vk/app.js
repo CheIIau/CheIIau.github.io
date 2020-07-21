@@ -4,6 +4,11 @@ const photosBtn = document.getElementById('getPhotos');
 const newsBtn = document.getElementById('getNews');
 const switchesBlock = document.querySelector('.switches-block');
 const switchFriendsOnline = document.querySelector('.switch-friends-online');
+const modalWindow = document.querySelector('.modal');
+
+modalWindow.addEventListener('click', () => {
+  modalWindow.style.display = 'NONE';
+});
 
 loginBtn.addEventListener('click', () => {
   const greetingsText = document.querySelector('.greetings_text');
@@ -134,7 +139,12 @@ function createNewsCards(news) {
   dataContainer.innerHTML = '';
 
   const newsContainer = document.createElement('ul');
-  newsContainer.classList.add('list-unstyled', 'offset-md-2', 'col-md-8');
+  newsContainer.classList.add(
+    'list-unstyled',
+    'offset-md-1',
+    'col-md-10',
+    'mt-5',
+  );
   dataContainer.append(newsContainer);
   let newsItems = news.items;
   const newsGroups = news.groups;
@@ -144,24 +154,80 @@ function createNewsCards(news) {
 }
 
 function createNewsDataCard(newsContainer, newsGroups, element) {
-  const group = newsGroups.find((group) => group.id == element.source_id * -1);
+  const group = newsGroups.find((group) => {
+    if (element.source_id < 0) {
+      return group.id == element.source_id * -1;
+    } else {
+      return group.id == element.source_id;
+    }
+  });
 
   const article = document.createElement('li');
-  article.classList.add('media', 'my-4');
+  article.classList.add('media', 'my-3');
 
-  const groupLogo = new Image();
-  groupLogo.src = group.photo_100;
-  groupLogo.classList.add('mr-3');
-  article.prepend(groupLogo);
+  const groupLogoRef = document.createElement('a');
+  groupLogoRef.href = `http://vk.com/club${group.id}`;
+  const groupLogoImage = new Image();
+  groupLogoImage.classList.add('group-logo');
+  groupLogoImage.src = group.photo_100;
+  groupLogoRef.classList.add('mr-3');
+  groupLogoRef.append(groupLogoImage);
+  article.prepend(groupLogoRef);
 
-  const articleText = document.createElement('div');
-  articleText.classList.add('media-body');
-  articleText.textContent = element.text;
-  article.append(articleText);
+  const articleContent = document.createElement('div');
+  articleContent.classList.add('media-body');
+  articleContent.textContent = element.text;
+  article.append(articleContent);
+
+  let articleRef = document.createElement('a');
+  articleRef.classList.add('mt-0', 'mb-1');
+  articleRef.href = `http://vk.com/club${group.id}`;
 
   let articleTitle = document.createElement('h5');
-  articleTitle.classList.add('mt-0', 'mb-1');
   articleTitle.textContent = group.name;
-  articleText.prepend(articleTitle);
+  articleRef.append(articleTitle);
+  articleContent.prepend(articleRef);
+
+  const newsImageContainer = document.createElement('div');
+  newsImageContainer.classList.add(
+    'row',
+    'text-center',
+    'text-lg-left',
+    'my-4',
+  );
+  newsImageContainer.addEventListener('click', (event) => {
+    openModalImage(event);
+  });
+  const imagesArr = element.attachments;
+  if (typeof imagesArr != 'undefined') {
+    imagesArr.forEach((image) => createNewsImages(image, newsImageContainer));
+  }
+  articleContent.append(newsImageContainer);
   newsContainer.append(article);
+  newsContainer.append(document.createElement('hr'));
+}
+
+function createNewsImages(image, newsImageContainer) {
+  if (image.type == 'photo') {
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('col-lg-4', 'col-md-6', 'col-6');
+    const imageLink = document.createElement('a');
+    imageLink.classList.add('d-block', 'mb-4', 'h-100');
+    imageContainer.append(imageLink);
+
+    const imageInGrid = new Image();
+    imageInGrid.src = image.photo.sizes[image.photo.sizes.length - 1].url;
+    imageInGrid.classList.add('img-fluid', 'img-thumbnail', 'news-img');
+    imageLink.append(imageInGrid);
+    newsImageContainer.append(imageContainer);
+  }
+}
+
+function openModalImage(event) {
+  const modalImage = document.querySelector('.modal-content');
+
+  if (event.target.tagName == 'IMG') {
+    modalWindow.style.display = 'BLOCK';
+    modalImage.src = event.target.src;
+  }
 }
