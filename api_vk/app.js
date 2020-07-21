@@ -68,6 +68,7 @@ function getNews(newsFilter) {
         resolve(newsArr);
       } else {
         console.log('нет ответа');
+        reject(alert('Error'));
       }
     });
   }).then((news) => console.log(news));
