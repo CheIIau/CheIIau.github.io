@@ -6,6 +6,24 @@ const switchesBlock = document.querySelector('.switches-block');
 const switchFriendsOnline = document.querySelector('.switch-friends-online');
 const modalWindow = document.querySelector('.modal');
 
+let Auth = {
+  login: function (appId) {
+    return new Promise(function (resolve, reject) {
+      VK.init({
+        apiId: appId,
+      });
+
+      VK.Auth.login(function (response) {
+        if (response.session) {
+          resolve(response);
+        } else {
+          reject(new Error('Не удалось авторизоваться'));
+        }
+      });
+    });
+  },
+};
+
 modalWindow.addEventListener('click', () => {
   modalWindow.style.display = 'NONE';
 });
@@ -58,6 +76,7 @@ function getFriends(friendsFilter) {
 }
 
 function getNews(newsFilter) {
+  console.log('123');
   new Promise((resolve, reject) => {
     VK.Api.call('newsfeed.get', { filters: 'post', v: '5.120' }, function (r) {
       if (r.response) {
@@ -65,6 +84,8 @@ function getNews(newsFilter) {
         const newsArr = newsFilter(r.response);
         console.log(r.response);
         resolve(newsArr);
+      } else {
+        console.log('нет ответа');
       }
     });
   }).then((news) => console.log(news));
