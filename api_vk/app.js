@@ -12,7 +12,9 @@ modalWindow.addEventListener('click', () => {
 
 loginBtn.addEventListener('click', () => {
   const greetingsText = document.querySelector('.greetings_text');
+  // eslint-disable-next-line no-undef
   Auth.login(7535975, 2 | 4 | 8192 | 262144);
+  // eslint-disable-next-line no-undef
   VK.Api.call('users.get', { v: '5.120' }, function (r) {
     if (r.response) {
       greetingsText.textContent = `Привет, ${r.response[0].first_name} ${r.response[0].last_name}`;
@@ -23,53 +25,65 @@ loginBtn.addEventListener('click', () => {
 });
 
 friendsBtn.addEventListener('click', () => {
-  getFriends(friendsFilterAll);
+  switchesBlock.style.display = 'BLOCK';
+  getResponseData(
+    'friends.get',
+    { fields: 'online, photo_100, sex', v: '5.120' },
+    friendsFilterAll,
+  ).then((cards) => createFriendCards(cards));
 });
 
 newsBtn.addEventListener('click', () => {
-  console.log('Новости');
-  getNews(newsFilterText);
+  switchesBlock.style.display = 'NONE';
+  getResponseData(
+    'newsfeed.get',
+    { filters: 'post', v: '5.120' },
+    newsFilterText,
+  ).then((news) => createNewsCards(news));
+});
+
+photosBtn.addEventListener('click', () => {
+  switchesBlock.style.display = 'NONE';
+  const photosImageContainer = createPhotoCards();
+  getResponseData('photos.get', { album_id: 'profile', v: '5.120' }).then(
+    (photos) => {
+      photos.items.forEach((image) => {
+        createImages(image, photosImageContainer);
+      });
+    },
+  );
 });
 
 switchFriendsOnline.addEventListener('click', () => {
+  const method = 'friends.get';
+  const parameters = { fields: 'online, photo_100, sex', v: '5.120' };
   if (switchFriendsOnline.classList.contains('switch-off')) {
     switchFriendsOnline.classList.toggle('switch-off');
-    getFriends(friendsFilterOnline);
+    getResponseData(method, parameters, friendsFilterOnline).then((cards) =>
+      createFriendCards(cards),
+    );
   } else {
     switchFriendsOnline.classList.toggle('switch-off');
-    getFriends(friendsFilterAll);
+    getResponseData(method, parameters, friendsFilterAll).then((cards) =>
+      createFriendCards(cards),
+    );
   }
 });
 
-function getFriends(friendsFilter) {
-  new Promise((resolve, reject) => {
-    VK.Api.call(
-      'friends.get',
-      { fields: 'online, photo_100, sex', v: '5.120' },
-      function (r) {
-        if (r.response) {
-          switchesBlock.style.display = 'BLOCK';
-          const friendsArr = friendsFilter(r.response);
-          resolve(friendsArr);
-        }
-      },
-    );
-  }).then((cards) => createFriendCards(cards));
-}
-
-function getNews(newsFilter) {
-  new Promise((resolve, reject) => {
-    VK.Api.call('newsfeed.get', { filters: 'post', v: '5.120' }, function (r) {
-      console.log(r);
+function getResponseData(method, parameters, filter = null) {
+  // eslint-disable-next-line no-unused-vars
+  return new Promise((resolve, reject) => {
+    // eslint-disable-next-line no-undef
+    VK.Api.call(method, parameters, function (r) {
       if (r.response) {
-        switchesBlock.style.display = 'NONE';
-        const newsArr = newsFilter(r.response);
-        resolve(newsArr);
-      } else {
-        console.log('нет ответа');
+        if (filter) {
+          const filteredArr = filter(r.response);
+          resolve(filteredArr);
+        }
+        resolve(r.response);
       }
     });
-  }).then((news) => createNewsCards(news));
+  });
 }
 
 function friendsFilterOnline(friendsArr) {
@@ -134,6 +148,23 @@ function createUserDataCard(cardUserData, element) {
   cardUserData.append(imageContainer);
   cardUserData.append(cardUserContainer);
   cardUserData.append(rightOffset);
+}
+
+function createPhotoCards() {
+  const dataContainer = document.getElementById('data-container');
+  dataContainer.innerHTML = '';
+  const photosImageContainer = document.createElement('div');
+  photosImageContainer.classList.add(
+    'row',
+    'text-center',
+    'text-lg-left',
+    'my-4',
+  );
+  dataContainer.append(photosImageContainer);
+  photosImageContainer.addEventListener('click', (event) => {
+    openModalImage(event);
+  });
+  return photosImageContainer;
 }
 
 function createNewsCards(news) {
@@ -202,27 +233,29 @@ function createNewsDataCard(newsContainer, newsGroups, element) {
   });
   const imagesArr = element.attachments;
   if (typeof imagesArr != 'undefined') {
-    imagesArr.forEach((image) => createNewsImages(image, newsImageContainer));
+    imagesArr.forEach((image) => {
+      if (image.type == 'photo') {
+        createImages(image.photo, newsImageContainer);
+      }
+    });
   }
   articleContent.append(newsImageContainer);
   newsContainer.append(article);
   newsContainer.append(document.createElement('hr'));
 }
 
-function createNewsImages(image, newsImageContainer) {
-  if (image.type == 'photo') {
-    const imageContainer = document.createElement('div');
-    imageContainer.classList.add('col-lg-4', 'col-md-6', 'col-6');
-    const imageLink = document.createElement('a');
-    imageLink.classList.add('d-block', 'mb-4', 'h-100');
-    imageContainer.append(imageLink);
+function createImages(image, newsImageContainer) {
+  const imageContainer = document.createElement('div');
+  imageContainer.classList.add('col-lg-4', 'col-md-6', 'col-6');
+  const imageLink = document.createElement('a');
+  imageLink.classList.add('d-block', 'mb-4', 'h-100');
+  imageContainer.append(imageLink);
 
-    const imageInGrid = new Image();
-    imageInGrid.src = image.photo.sizes[image.photo.sizes.length - 1].url;
-    imageInGrid.classList.add('img-fluid', 'img-thumbnail', 'news-img');
-    imageLink.append(imageInGrid);
-    newsImageContainer.append(imageContainer);
-  }
+  const imageInGrid = new Image();
+  imageInGrid.src = image.sizes[image.sizes.length - 1].url;
+  imageInGrid.classList.add('img-fluid', 'img-thumbnail', 'news-img');
+  imageLink.append(imageInGrid);
+  newsImageContainer.append(imageContainer);
 }
 
 function openModalImage(event) {
