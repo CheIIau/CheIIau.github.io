@@ -69,7 +69,7 @@ switchFriendsOnline.addEventListener('click', () => {
     );
   }
 });
-
+//self-explanatory
 function getResponseData(method, parameters, filter = null) {
   // eslint-disable-next-line no-unused-vars
   return new Promise((resolve, reject) => {
@@ -85,7 +85,7 @@ function getResponseData(method, parameters, filter = null) {
     });
   });
 }
-
+//Filters
 function friendsFilterOnline(friendsArr) {
   return friendsArr.items.filter((element) => {
     return element.online == 1;
@@ -101,7 +101,7 @@ function newsFilterText(newsArr) {
   });
   return { groups: newsArr.groups, items: itemsArr };
 }
-
+//creates a blank sheet for cards
 function createFriendCards(cards) {
   const dataContainer = document.getElementById('data-container');
   dataContainer.innerHTML = '';
@@ -116,7 +116,7 @@ function createFriendCards(cards) {
 
   cards.forEach((element) => createUserDataCard(containerRow, element));
 }
-
+//creates cards and stuff
 function createUserDataCard(cardUserData, element) {
   const { first_name, last_name, id, photo_100 } = element;
 
@@ -149,7 +149,7 @@ function createUserDataCard(cardUserData, element) {
   cardUserData.append(cardUserContainer);
   cardUserData.append(rightOffset);
 }
-
+//creates a blank sheet for photos
 function createPhotoCards() {
   const dataContainer = document.getElementById('data-container');
   dataContainer.innerHTML = '';
@@ -166,7 +166,7 @@ function createPhotoCards() {
   });
   return photosImageContainer;
 }
-
+//creates a blank sheet for news
 function createNewsCards(news) {
   const dataContainer = document.getElementById('data-container');
   dataContainer.innerHTML = '';
@@ -185,7 +185,7 @@ function createNewsCards(news) {
     createNewsDataCard(newsContainer, newsGroups, element),
   );
 }
-
+//creates news cards and filling them with data and stuff
 function createNewsDataCard(newsContainer, newsGroups, element) {
   const group = newsGroups.find((group) => {
     if (element.source_id < 0) {
@@ -193,7 +193,7 @@ function createNewsDataCard(newsContainer, newsGroups, element) {
     } else {
       return group.id == element.source_id;
     }
-  });
+  }); //отрицательный индекс - группа, положительный - user
 
   const article = document.createElement('li');
   article.classList.add('media', 'my-3');
@@ -233,6 +233,7 @@ function createNewsDataCard(newsContainer, newsGroups, element) {
   });
   const imagesArr = element.attachments;
   if (typeof imagesArr != 'undefined') {
+    // somehow there are elements without attachments
     imagesArr.forEach((image) => {
       if (image.type == 'photo') {
         createImages(image.photo, newsImageContainer);
@@ -243,7 +244,7 @@ function createNewsDataCard(newsContainer, newsGroups, element) {
   newsContainer.append(article);
   newsContainer.append(document.createElement('hr'));
 }
-
+//adds an image on news card
 function createImages(image, newsImageContainer) {
   const imageContainer = document.createElement('div');
   imageContainer.classList.add('col-lg-4', 'col-md-6', 'col-6');
@@ -257,7 +258,7 @@ function createImages(image, newsImageContainer) {
   imageLink.append(imageInGrid);
   newsImageContainer.append(imageContainer);
 }
-
+//for image to open in modal window
 function openModalImage(event) {
   const modalImage = document.querySelector('.modal-content');
 
