@@ -48,6 +48,10 @@ button#login {
   word-break: normal;
 }
 
+.media-body a h5 {
+  font-size: 1rem;
+}
+
 hr {
   width: 100%;
 }
@@ -101,5 +105,11 @@ hr {
 
 .news-img {
   cursor: pointer;
+}
+
+@media (max-width: 340px) {
+  .btn-group .btn {
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
