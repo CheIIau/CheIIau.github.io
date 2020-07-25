@@ -203,12 +203,12 @@ function createNewsDataCard(newsContainer, newsGroups, element) {
   const groupLogoImage = new Image();
   groupLogoImage.classList.add('group-logo');
   groupLogoImage.src = group.photo_100;
-  groupLogoRef.classList.add('col-2');
+  groupLogoRef.classList.add('col-lg-2', 'col-3');
   groupLogoRef.append(groupLogoImage);
   article.prepend(groupLogoRef);
 
   const articleContent = document.createElement('div');
-  articleContent.classList.add('media-body');
+  articleContent.classList.add('media-body', 'col-lg-10', 'col-10');
   articleContent.textContent = element.text;
   article.append(articleContent);
 

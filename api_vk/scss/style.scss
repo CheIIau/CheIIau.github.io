@@ -29,6 +29,9 @@ button#login {
 }
 .group-logo {
     border-radius: 100%;
+    @media (max-width: 540px) {
+        width: 110%;
+    }
 }
 .media-body {
     word-break: normal;
