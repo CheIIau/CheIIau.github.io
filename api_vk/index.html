@@ -15,18 +15,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://vk.com/js/api/openapi.js"></script>
-    <link rel="stylesheet" href="css/style.min.css">
-</head>
+<link href="css/style.css" rel="stylesheet"></head>
 
 <body>
     <div class="container">
         <div class="greetings_text text-center"></div>
         <button id="login" type="button" class="btn btn-primary btn-lg">Log in</button>
         <div class="col-md-12 text-center mb-3">
-            <div class="btn-group mx-auto" role="group" aria-label="Methods">
-                <button id="getFriends" type="button" class="btn btn-primary btn-lg">Друзья</button>
-                <button id="getPhotos" type="button" class="btn btn-success btn-lg">Фото</button>
-                <button id="getNews" type="button" class="btn btn-info btn-lg">Новости</button>
+            <div id='button-panel' class="btn-group mx-auto" role="group" aria-label="Methods">
+                <button id="getFriends" type="button" data-route='getFriends'
+                    class="btn btn-primary btn-lg">Друзья</button>
+                <button id="getPhotos" type="button" data-route='getPhotos' class="btn btn-success btn-lg">Фото</button>
+                <button id="getNews" type="button" data-route='getNews' class="btn btn-info btn-lg">Новости</button>
             </div>
         </div>
         <div class="text-center switches-block">
@@ -43,8 +43,6 @@
         <img src="" alt="" class="modal-content">
         <span class="close">&times;</span>
     </div>
-    <script src="model.js"></script>
-    <script src="app.js"></script>
-</body>
+<script src="polyfill.js"></script><script src="app.js"></script></body>
 
 </html>
