@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     btn.forEach(item => {
         item.addEventListener('click', () => {
-            item.innerHTML = "Не жми, заебал";
+            item.innerHTML = "Не жми";
         });
     });
 });
