@@ -1,0 +1,5 @@
+Макет проекта «По Полочкам»
+https://www.figma.com/file/2gQUXnH9ZbNMlWSWG6g0nY/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B8-HTML-Academy?node-id=2%3A315
+
+Репозиторий с начальной сборкой проекта
+https://github.com/htmlacademy/template-engine-source
